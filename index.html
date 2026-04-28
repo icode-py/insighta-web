@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insighta Labs+</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Login Page -->
+        <div id="login-page" class="page">
+            <div class="login-container">
+                <h1>🔬 Insighta Labs+</h1>
+                <p>Demographic Intelligence Platform</p>
+                <button onclick="login()" class="github-btn">
+                    Continue with GitHub
+                </button>
+            </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard-page" class="page" style="display:none">
+            <nav>
+                <h2>Insighta Labs+</h2>
+                <div class="nav-links">
+                    <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+                    <a href="#" onclick="showPage('profiles')">Profiles</a>
+                    <a href="#" onclick="showPage('search')">Search</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+                <div id="user-info"></div>
+            </nav>
+            <div id="dashboard-content" class="content">
+                <h3>Dashboard</h3>
+                <div class="stats">
+                    <div class="stat-card">
+                        <h4 id="total-profiles">-</h4>
+                        <p>Total Profiles</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4 id="total-male">-</h4>
+                        <p>Male</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4 id="total-female">-</h4>
+                        <p>Female</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profiles Page -->
+        <div id="profiles-page" class="page" style="display:none">
+            <nav>
+                <h2>Insighta Labs+</h2>
+                <div class="nav-links">
+                    <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+                    <a href="#" onclick="showPage('profiles')">Profiles</a>
+                    <a href="#" onclick="showPage('search')">Search</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </nav>
+            <div class="content">
+                <h3>Profiles</h3>
+                <div class="filters">
+                    <input type="text" id="filter-gender" placeholder="Gender">
+                    <input type="text" id="filter-country" placeholder="Country Code">
+                    <input type="number" id="filter-min-age" placeholder="Min Age">
+                    <input type="number" id="filter-max-age" placeholder="Max Age">
+                    <button onclick="loadProfiles()">Filter</button>
+                </div>
+                <div id="profiles-table"></div>
+                <div id="pagination"></div>
+            </div>
+        </div>
+
+        <!-- Search Page -->
+        <div id="search-page" class="page" style="display:none">
+            <nav>
+                <h2>Insighta Labs+</h2>
+                <div class="nav-links">
+                    <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+                    <a href="#" onclick="showPage('profiles')">Profiles</a>
+                    <a href="#" onclick="showPage('search')">Search</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </nav>
+            <div class="content">
+                <h3>Natural Language Search</h3>
+                <div class="search-box">
+                    <input type="text" id="search-query" placeholder="e.g., young males from nigeria">
+                    <button onclick="searchProfiles()">Search</button>
+                </div>
+                <div id="search-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/src/app.js"></script>
+</body>
+
+</html>
