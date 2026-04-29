@@ -169,6 +169,13 @@ async function searchProfiles() {
         console.error('Search error:', e);
     }
 }
+// Expose to global scope for HTML onclick handlers
+window.showPage = showPage;
+window.loadProfiles = loadProfiles;
+window.searchProfiles = searchProfiles;
+window.logout = logout;
+window.login = login;
+
 
 // Initialize
 checkAuth();
