@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://insighta-backend-production-89e8.up.railway.app';
 let currentPage = 1;
 
 // Check if user is logged in (has cookies)
